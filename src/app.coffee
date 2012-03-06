@@ -1,4 +1,9 @@
-### coffeescript generated ###
+###
+Flickly - Backbone jQuery Mobile demo
+http://addyosmani.com
+Copyright (c) 2011 Addy Osmani
+Dual licensed under the MIT and GPL licenses.
+###
 
 define([
 	'backbone'
