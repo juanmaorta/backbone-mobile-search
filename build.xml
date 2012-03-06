@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="mobile_app" default="default" basedir=".">
+	<target name="default">
+		<echo message="Hello World! from Ant" />
+	</target>
+	<target name="clean">
+		<echo message="Cleaning build folder" />
+		<delete dir="./build" includeemptydirs="true" verbose="false" failonerror="true" />
+		<delete dir="./release" includeemptydirs="true" verbose="false" failonerror="true" />
+	</target>
+	<target name="compilecoffee" description="Compiles coffeescript files" depends="clean">
+		<echo message="Compiling Coffeescript files" />
+		<exec executable="coffee">
+			<arg line="-c -o ./build ./src" />
+		</exec>
+	</target>
+	<target name="optimize">
+		<echo message="Optimizing with Require Optimizer" />
+		<exec executable="node">
+			<!-- Not working because r.js must be out of the tree to compile -->
+			<arg line="../r.js -o ../release/app-build.js" />
+		</exec>
+	</target>
+</project>
